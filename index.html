@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en-UK">
+    <head>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>David Golding</title>
+        <script
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+            charset="utf-8"
+        ></script>
+        <script src="animate.js" charset="utf-8"></script>
+        <script src="autosize.js"></script>
+    </head>
+    <body>
+        <!--Landing slide-->
+        <div id="landing" class="snapScroll">
+            <h1 id="center">
+                DAVID <br />
+                GOLDING.
+            </h1>
+        </div>
+        <!--Contents + Nav-->
+        <div id="contentsNav">
+            <!--Nav bar-->
+            <nav>
+                <!--Site logo-->
+                <div id="logo">
+                    <a href="#landing" class="noPadding"
+                        ><h2>DAVID GOLDING</h2></a
+                    >
+                </div>
+                <!--Slide shortcuts-->
+                <div id="navLinks">
+                    <a id="navAbout" href="#about" class="selected">About</a>
+                    <a id="navExperience" href="#experience" class="unselected"
+                        >Experience</a
+                    >
+                    <a id="navContact" href="#contact" class="unselected"
+                        >Contact</a
+                    >
+                </div>
+                <!--Mobile menu image-->
+                <img id="mobileMenu" src="menubar.png" alt="Menu" />
+            </nav>
+            <!--Contents-->
+            <div id="contents">
+                <!--About slide-->
+                <div id="about" class="snapScroll">
+                    <!--About box shadow-->
+                    <div id="aboutBack"></div>
+                    <!--About box contents-->
+                    <div id="aboutFront">
+                        <img
+                            id="profileImage"
+                            src="dg.png"
+                            alt="David's Profile Image"
+                        />
+                        <h3>ME.</h3>
+                        <p id="aboutText">
+                            I’m a first-year Computer Science student at the
+                            University of Warwick. Outside of term time, I’m
+                            located in Sleaford, Lincolnshire. <br /><br />
+                            I enjoy software development and the challenges that
+                            it presents. I have experience using and developing
+                            programs in a variety of languages, including Java
+                            and Python and I'm proficient in the object-oriented
+                            paradigm. This includes in the creation of
+                            client-server applications, APIs and graphical user
+                            interfaces (GUIs). I also have an interest in web
+                            development.
+                            <br /><br />
+                            Warwick has supercharged my understanding of
+                            Computer Science. It's reinforced the
+                            problem-solving mindset required in order to solve
+                            complex problems and introduced me to new
+                            algorithms. This has allowed me to solve problems
+                            which delivers the best compromise on speed and
+                            efficiency using the likes of AVL trees and hashing.
+                            Finally, by being taught from first-principles has
+                            meant that I'm able to easily pick up new languages
+                            as all there really is to learn is the syntax.
+                            <br /><br />
+                            At the heart of any front-end application, I create
+                            is the user. You can have a great backend behind the
+                            interface but if the experience for the user is
+                            poor, then the application is destined for failure.
+                            I always aim to create easy to use and aesthetically
+                            pleasing applications.
+                            <br /><br />
+                            In terms of applications for my skills, I have
+                            wide-ranging interests: from financial markets to
+                            autonomous vehicles. Any way in which I can apply
+                            technology to improve an experience I'm interested
+                            in.
+                        </p>
+                    </div>
+                </div>
+                <!--Experience slide-->
+                <div id="experience" class="snapScroll">
+                    <div id="grid">
+                        <!--Individual project-->
+                        <div class="project">
+                            <!--Project shadow-->
+                            <div class="projectShadow"></div>
+                            <!--Project contents-->
+                            <div class="projectFront">
+                                <!--Language img-->
+                                <img
+                                    class="projectLogo"
+                                    src="htmln.png"
+                                    alt="HTML"
+                                />
+                                <!--Details-->
+                                <div class="projectSide">
+                                    <!--Date-->
+                                    <p class="projectDate">June 2019</p>
+                                    <!--Title-->
+                                    <p class="projectTitle">This Website.</p>
+                                    <!--Link-->
+                                    <a
+                                        href="https://github.com/davidjgolding/Website"
+                                        ><button
+                                            class="availableButton"
+                                            type="button"
+                                        >
+                                            GitHub
+                                        </button></a
+                                    >
+                                </div>
+                                <!--Description-->
+                                <p class="projectDescription">
+                                    A personal project to enhance my web
+                                    development skills. The project provided me
+                                    with solid foundations in JavaScript and
+                                    jQuery, in which I had no previous
+                                    experience. The single page site was
+                                    developed with cross-platform compatability
+                                    in mind to enable the best experience no
+                                    matter what device is used.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <div class="projectShadow"></div>
+                            <div class="projectFront">
+                                <img
+                                    class="projectLogo"
+                                    src="javan.png"
+                                    alt="Java"
+                                />
+                                <div class="projectSide">
+                                    <p class="projectDate">May 2019</p>
+                                    <p class="projectTitle">Blockchain.</p>
+                                    <a
+                                        href="https://github.com/davidjgolding/Blockchain"
+                                        ><button
+                                            class="availableButton"
+                                            type="button"
+                                        >
+                                            GitHub
+                                        </button></a
+                                    >
+                                </div>
+                                <p class="projectDescription">
+                                    Developed in Java in order to enhance my
+                                    understanding blockchains. The project
+                                    creates a simple blockchain containing an
+                                    arbitrary number of blocks with each block
+                                    having data as well as the hash of the
+                                    previous block. While this blockchain isn't
+                                    distributed, there is the potential for
+                                    future development to add such a feature.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <div class="projectShadow"></div>
+                            <div class="projectFront">
+                                <img
+                                    class="projectLogo"
+                                    src="javan.png"
+                                    alt="Java"
+                                />
+                                <div class="projectSide">
+                                    <p class="projectDate">March 2019</p>
+                                    <p class="projectTitle">Witter.</p>
+                                    <button type="button">On Request</button>
+                                </div>
+                                <p class="projectDescription">
+                                    Coursework relating to the "Design of
+                                    Information Structures" (<a
+                                        class="projectLink"
+                                        href="https://warwick.ac.uk/fac/sci/dcs/teaching/modules/cs126/"
+                                        >CS126</a
+                                    >) first-year module. It involved processing
+                                    and returning "Weets" and users in Java. AVL
+                                    trees and hash tables were the core data
+                                    structures used to store and respond to a
+                                    user's requests in a fast yet efficient
+                                    manor. Essentially, the project replicated
+                                    the basic functionality of Twitter.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <div class="projectShadow"></div>
+                            <div class="projectFront">
+                                <img
+                                    class="projectLogo"
+                                    src="haskelln.png"
+                                    alt="Java"
+                                />
+                                <div class="projectSide">
+                                    <p class="projectDate">March 2019</p>
+                                    <p class="projectTitle">Scratch Clone.</p>
+                                    <button type="button">On Request</button>
+                                </div>
+                                <p class="projectDescription">
+                                    Coursework relating to the "Functional
+                                    Programming" (<a
+                                        class="projectLink"
+                                        href="https://warwick.ac.uk/fac/sci/dcs/teaching/modules/cs141/"
+                                        >CS141</a
+                                    >) first-year module. The task involved
+                                    writing a program in Haskell which evaluated
+                                    different types of statement taking into
+                                    account some state. These included
+                                    assignment, if and while statmenets. Once
+                                    evaluated the program returned the updated
+                                    state.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <div class="projectShadow"></div>
+                            <div class="projectFront">
+                                <img
+                                    class="projectLogo"
+                                    src="haskelln.png"
+                                    alt="Java"
+                                />
+                                <div class="projectSide">
+                                    <p class="projectDate">Feburary 2019</p>
+                                    <p class="projectTitle">Mastermind.</p>
+                                    <button type="button">On Request</button>
+                                </div>
+                                <p class="projectDescription">
+                                    Coursework relating to the "Functional
+                                    Programming" (<a
+                                        class="projectLink"
+                                        href="https://warwick.ac.uk/fac/sci/dcs/teaching/modules/cs141/"
+                                        >CS141</a
+                                    >) first-year module. It involved writing
+                                    functions in Haskell to create the ability
+                                    to crack any 4 character code in a maximum
+                                    of 5 guesses by implementing Donald Knuth's
+                                    algorithm.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <div class="projectShadow"></div>
+                            <div class="projectFront">
+                                <img
+                                    class="projectLogo"
+                                    src="javan.png"
+                                    alt="Java"
+                                />
+                                <div class="projectSide">
+                                    <p class="projectDate">December 2018</p>
+                                    <p class="projectTitle">Maze 2.</p>
+                                    <button type="button">On Request</button>
+                                </div>
+                                <p class="projectDescription">
+                                    Coursework relating to the "Programming for
+                                    Computer Scientists" (<a
+                                        class="projectLink"
+                                        href="https://warwick.ac.uk/fac/sci/dcs/teaching/modules/cs118/"
+                                        >CS118</a
+                                    >) first-year module. This task developed
+                                    the functionality from Maze 1 so that the
+                                    robot navigated a given maze using a depth
+                                    first search. A stack was used to record the
+                                    robots moves so that each the robot was able
+                                    to easily retrace its successful path.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <div class="projectShadow"></div>
+                            <div class="projectFront">
+                                <img
+                                    class="projectLogo"
+                                    src="javan.png"
+                                    alt="Java"
+                                />
+                                <div class="projectSide">
+                                    <p class="projectDate">October 2018</p>
+                                    <p class="projectTitle">Maze 1.</p>
+                                    <button type="button">On Request</button>
+                                </div>
+                                <p class="projectDescription">
+                                    Coursework relating to the "Programming for
+                                    Computer Scientists" (<a
+                                        class="projectLink"
+                                        href="https://warwick.ac.uk/fac/sci/dcs/teaching/modules/cs118/"
+                                        >CS118</a
+                                    >) first-year module. The aim of the task
+                                    was to navigate a robot around a virutal
+                                    maze without it crashing into walls and make
+                                    moves which positioned it closer to the
+                                    target. A random move was chosen if multiple
+                                    moves made the robot closer to the target.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <div class="projectShadow"></div>
+                            <div class="projectFront">
+                                <img
+                                    class="projectLogo"
+                                    src="pythonn.png"
+                                    alt="Python"
+                                />
+                                <div class="projectSide">
+                                    <p class="projectDate">May 2018</p>
+                                    <p class="projectTitle">Virtual Trading.</p>
+                                    <button type="button">On Request</button>
+                                </div>
+                                <p class="projectDescription">
+                                    A-Level coursework in which I created a
+                                    client-server virtual trading platform for
+                                    trading on the forex. It combined multiple
+                                    languages such as Python and SQL and
+                                    included technologies such as networking.
+                                    The multi-user platform had a graphical user
+                                    interface with each user having their own
+                                    account and trading activity.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Contact slide-->
+                <div id="contact" class="snapScroll">
+                    <!--Central single box-->
+                    <div id="contactBox">
+                        <!--Center contents-->
+                        <div id="centerContact">
+                            <!--Contacct form-->
+                            <div class="mainContent">
+                                <h3>HELLO.</h3>
+                                <p id="contactText">
+                                    Enter your details below and I'll be in
+                                    touch!
+                                </p>
+                                <form action="/submit.php" method="post">
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        placeholder="Name"
+                                    />
+                                    <br />
+                                    <input
+                                        type="text"
+                                        name="email"
+                                        placeholder="Email"
+                                    />
+                                    <br />
+                                    <textarea
+                                        id="message"
+                                        placeholder="Message"
+                                    ></textarea>
+                                    <script>
+                                        autosize(
+                                            document.getElementById("message")
+                                        );
+                                    </script>
+                                    <br />
+                                    <input type="submit" />
+                                </form>
+                            </div>
+                        </div>
+                        <!--Social media-->
+                        <div id="social">
+                            <a href="https://uk.linkedin.com/in/davidjgolding"
+                                ><img
+                                    class="socialImg"
+                                    src="linkedin.png"
+                                    width="50px"
+                            /></a>
+                            <a href="https://github.com/davidjgolding"
+                                ><img
+                                    class="socialImg"
+                                    src="githubn.png"
+                                    width="50px"
+                            /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <div id="endSnap"></div>
+    <footer>
+        <h4>© David Golding 2019</h4>
+    </footer>
+</html>
