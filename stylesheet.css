@@ -15,6 +15,7 @@
     font-weight: 400;
     color: #111111;
     font-size: 15px;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -57,13 +58,11 @@ h4 {
 
 /*-Text Body*/
 p {
-    font-size: 15px;
     font-weight: 400;
     color: #000000;
 }
 
 a {
-    font-size: 15px;
     font-weight: 500;
     color: #000000;
     padding: 0px 20px 50px 0px;
@@ -72,11 +71,11 @@ a {
 
 /*-Nav*/
 nav {
-    position: sticky;
+    position: fixed;
+    width: 100%;
     background-color: #e8e8e8;
     border-bottom: 0.1px solid #d7d7d7;
     height: 40px;
-    position: -webkit-sticky; /* Safari */
     top: 0;
     z-index: 1000;
 }
@@ -154,7 +153,8 @@ textarea:focus {
     color: transparent;
     -moz-background-clip: text;
     -webkit-background-clip: text;
-    background-image: url(https://media3.giphy.com/media/U3qYN8S0j3bpK/giphy.gif?cid=790b76115d08e4fa48696b7451c4567f&rid=giphy.gif);
+    /* original src:https://www.pexels.com/video/1411869/ */
+    background-image: url(assets/background.gif);
 }
 
 .noPadding {
@@ -225,7 +225,7 @@ textarea:focus {
 }
 
 #aboutText {
-    font-size: 15px;
+    font-size: 15px !important;
     margin: 0 20px;
 }
 
@@ -328,7 +328,7 @@ textarea:focus {
 
 #contact {
     height: 100vh;
-    background-color: #f0dfa5;
+    background-color: #2e2e2e /*#f0dfa5*/;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -342,7 +342,7 @@ textarea:focus {
 
 #contactBox {
     background-color: #e8e8e8;
-    padding: 10px 0px;
+    padding: 0px 0px 10px 0px;
     width: 100%;
     height: auto;
 }
@@ -365,17 +365,41 @@ textarea:focus {
     text-align: center;
 }
 
-/*Footer*/
-
-#endSnap {
-    scroll-snap-align: end;
+#submitStatus {
+    position: relative;
 }
-.icon {
-    padding-top: 30px;
+
+.submitSuccess {
+    margin: 0;
+    background-color: green;
+    color: white;
+    width: 100%;
+    text-align: center;
+    word-wrap: normal;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.submitFailure {
+    margin: 0;
+    background-color: red;
+    color: white;
+    width: 100%;
+    text-align: center;
+    word-wrap: normal;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .socialImg {
     display: inline !important;
+    width: 50px;
+}
+
+/*Footer*/
+
+#endSnap {
+    scroll-snap-align: end;
 }
 
 /*Desktop Display*/
@@ -445,6 +469,10 @@ textarea:focus {
         transform: translate(-60px, 10px);
     }
 
+    #aboutText {
+        font-size: 15px !important;
+    }
+
     @keyframes shadowAnimation {
         0% {
             transform: translate(-60px, 10px);
@@ -463,5 +491,10 @@ textarea:focus {
     #contactBox {
         width: 750px !important;
         height: 600px !important;
+    }
+
+    #submitStatus {
+        width: 750px;
+        position: absolute;
     }
 }

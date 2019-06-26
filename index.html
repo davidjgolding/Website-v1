@@ -1,17 +1,33 @@
 <!DOCTYPE html>
-<html lang="en-UK">
+<html lang="en">
     <head>
         <link rel="stylesheet" type="text/css" href="stylesheet.css" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>David Golding</title>
-        <script
-            src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
-            charset="utf-8"
-        ></script>
-        <script src="animate.js" charset="utf-8"></script>
-        <script src="autosize.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="JavaScript/animate.js"></script>
+        <script src="JavaScript/autosize.js"></script>
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="favicon-16x16.png"
+        />
+        <link rel="manifest" href="site.webmanifest" />
     </head>
+
     <body>
         <!--Landing slide-->
         <div id="landing" class="snapScroll">
@@ -32,7 +48,7 @@
                 </div>
                 <!--Slide shortcuts-->
                 <div id="navLinks">
-                    <a id="navAbout" href="#about" class="selected">About</a>
+                    <a id="navAbout" href="#about" class="unselected">About</a>
                     <a id="navExperience" href="#experience" class="unselected"
                         >Experience</a
                     >
@@ -41,7 +57,7 @@
                     >
                 </div>
                 <!--Mobile menu image-->
-                <img id="mobileMenu" src="menubar.png" alt="Menu" />
+                <img id="mobileMenu" src="assets/menubar.png" alt="Menu" />
             </nav>
             <!--Contents-->
             <div id="contents">
@@ -53,7 +69,7 @@
                     <div id="aboutFront">
                         <img
                             id="profileImage"
-                            src="dg.png"
+                            src="assets/dg.png"
                             alt="David's Profile Image"
                         />
                         <h3>ME.</h3>
@@ -108,7 +124,7 @@
                                 <!--Language img-->
                                 <img
                                     class="projectLogo"
-                                    src="htmln.png"
+                                    src="assets/html.png"
                                     alt="HTML"
                                 />
                                 <!--Details-->
@@ -118,15 +134,13 @@
                                     <!--Title-->
                                     <p class="projectTitle">This Website.</p>
                                     <!--Link-->
-                                    <a
-                                        href="https://github.com/davidjgolding/Website"
-                                        ><button
-                                            class="availableButton"
-                                            type="button"
-                                        >
-                                            GitHub
-                                        </button></a
+                                    <button
+                                        class="availableButton"
+                                        type="button"
+                                        onclick="window.location.href = 'https://github.com/davidjgolding/Website';"
                                     >
+                                        GitHub
+                                    </button>
                                 </div>
                                 <!--Description-->
                                 <p class="projectDescription">
@@ -146,21 +160,19 @@
                             <div class="projectFront">
                                 <img
                                     class="projectLogo"
-                                    src="javan.png"
+                                    src="assets/java.png"
                                     alt="Java"
                                 />
                                 <div class="projectSide">
                                     <p class="projectDate">May 2019</p>
                                     <p class="projectTitle">Blockchain.</p>
-                                    <a
-                                        href="https://github.com/davidjgolding/Blockchain"
-                                        ><button
-                                            class="availableButton"
-                                            type="button"
-                                        >
-                                            GitHub
-                                        </button></a
+                                    <button
+                                        class="availableButton"
+                                        type="button"
+                                        onclick="window.location.href = 'https://github.com/davidjgolding/Blockchain';"
                                     >
+                                        GitHub
+                                    </button>
                                 </div>
                                 <p class="projectDescription">
                                     Developed in Java in order to enhance my
@@ -179,7 +191,7 @@
                             <div class="projectFront">
                                 <img
                                     class="projectLogo"
-                                    src="javan.png"
+                                    src="assets/java.png"
                                     alt="Java"
                                 />
                                 <div class="projectSide">
@@ -208,7 +220,7 @@
                             <div class="projectFront">
                                 <img
                                     class="projectLogo"
-                                    src="haskelln.png"
+                                    src="assets/haskell.png"
                                     alt="Java"
                                 />
                                 <div class="projectSide">
@@ -223,12 +235,12 @@
                                         href="https://warwick.ac.uk/fac/sci/dcs/teaching/modules/cs141/"
                                         >CS141</a
                                     >) first-year module. The task involved
-                                    writing a program in Haskell which evaluated
-                                    different types of statement taking into
-                                    account some state. These included
-                                    assignment, if and while statmenets. Once
-                                    evaluated the program returned the updated
-                                    state.
+                                    writing a program in Haskell which given
+                                    some state and instructions, evaluates the
+                                    instructions and updates the state,
+                                    returning the updated state. The
+                                    instructions included assignment, if and
+                                    while statements.
                                 </p>
                             </div>
                         </div>
@@ -237,7 +249,7 @@
                             <div class="projectFront">
                                 <img
                                     class="projectLogo"
-                                    src="haskelln.png"
+                                    src="assets/haskell.png"
                                     alt="Java"
                                 />
                                 <div class="projectSide">
@@ -264,7 +276,7 @@
                             <div class="projectFront">
                                 <img
                                     class="projectLogo"
-                                    src="javan.png"
+                                    src="assets/java.png"
                                     alt="Java"
                                 />
                                 <div class="projectSide">
@@ -282,8 +294,8 @@
                                     the functionality from Maze 1 so that the
                                     robot navigated a given maze using a depth
                                     first search. A stack was used to record the
-                                    robots moves so that each the robot was able
-                                    to easily retrace its successful path.
+                                    robot's moves so that it was able to easily
+                                    retrace a successful path.
                                 </p>
                             </div>
                         </div>
@@ -292,7 +304,7 @@
                             <div class="projectFront">
                                 <img
                                     class="projectLogo"
-                                    src="javan.png"
+                                    src="assets/java.png"
                                     alt="Java"
                                 />
                                 <div class="projectSide">
@@ -320,7 +332,7 @@
                             <div class="projectFront">
                                 <img
                                     class="projectLogo"
-                                    src="pythonn.png"
+                                    src="assets/python.png"
                                     alt="Python"
                                 />
                                 <div class="projectSide">
@@ -333,53 +345,63 @@
                                     client-server virtual trading platform for
                                     trading on the forex. It combined multiple
                                     languages such as Python and SQL and
-                                    included technologies such as networking.
-                                    The multi-user platform had a graphical user
-                                    interface with each user having their own
-                                    account and trading activity.
+                                    included technologies such as networking and
+                                    threading. The multi-user platform had a
+                                    graphical user interface with each user
+                                    having their own account and trading
+                                    activity.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <!--Contact slide-->
                 <div id="contact" class="snapScroll">
                     <!--Central single box-->
                     <div id="contactBox">
+                        <p id="submitStatus"></p>
                         <!--Center contents-->
                         <div id="centerContact">
-                            <!--Contacct form-->
+                            <!--Contact form-->
                             <div class="mainContent">
-                                <h3>HELLO.</h3>
-                                <p id="contactText">
-                                    Enter your details below and I'll be in
-                                    touch!
-                                </p>
-                                <form action="/submit.php" method="post">
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        placeholder="Name"
-                                    />
-                                    <br />
-                                    <input
-                                        type="text"
-                                        name="email"
-                                        placeholder="Email"
-                                    />
-                                    <br />
-                                    <textarea
-                                        id="message"
-                                        placeholder="Message"
-                                    ></textarea>
-                                    <script>
-                                        autosize(
-                                            document.getElementById("message")
-                                        );
-                                    </script>
-                                    <br />
-                                    <input type="submit" />
-                                </form>
+                                <h3 id="formTitle">HELLO.</h3>
+                                <div id="formWithoutTitle">
+                                    <p id="contactText">
+                                        Enter your details below and I'll be in
+                                        touch!
+                                    </p>
+                                    <form id="contactForm" method="post">
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            placeholder="Name"
+                                        />
+                                        <br />
+                                        <input
+                                            type="text"
+                                            id="email"
+                                            name="email"
+                                            placeholder="Email"
+                                        />
+                                        <br />
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            placeholder="Message"
+                                        ></textarea>
+                                        <script>
+                                            autosize(
+                                                document.getElementById(
+                                                    "message"
+                                                )
+                                            );
+                                        </script>
+                                        <br />
+                                        <input type="submit" id="submit" />
+                                    </form>
+                                </div>
                             </div>
                         </div>
                         <!--Social media-->
@@ -387,14 +409,14 @@
                             <a href="https://uk.linkedin.com/in/davidjgolding"
                                 ><img
                                     class="socialImg"
-                                    src="linkedin.png"
-                                    width="50px"
+                                    src="assets/linkedin.png"
+                                    alt="LinkedIn"
                             /></a>
                             <a href="https://github.com/davidjgolding"
                                 ><img
                                     class="socialImg"
-                                    src="githubn.png"
-                                    width="50px"
+                                    src="assets/github.png"
+                                    alt="GitHub"
                             /></a>
                         </div>
                     </div>
