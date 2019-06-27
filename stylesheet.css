@@ -47,7 +47,7 @@ h3 {
     text-align: center;
     font-size: 30px;
     font-weight: 500;
-    color: #000000;
+    color: #e8e8e8;
     padding: 10px 0px 10px 0px;
 }
 
@@ -57,16 +57,17 @@ h4 {
 }
 
 /*-Text Body*/
-p {
-    font-weight: 400;
-    color: #000000;
-}
 
 a {
     font-weight: 500;
     color: #000000;
-    padding: 0px 20px 50px 0px;
+    padding: 25px 20px 25px 0px;
     text-decoration: none;
+}
+
+p {
+    font-weight: 400;
+    color: #000000;
 }
 
 /*-Nav*/
@@ -105,16 +106,24 @@ input[type="submit"] {
     font-size: 13px;
     border: none;
     border-radius: 4px;
+    background-color: white;
+    color: #111111;
+}
+
+input[type="submit"]:hover {
+    background-color: #0ac959;
+    color: white;
 }
 
 input[type="text"] {
     text-align: center;
-    background-color: #e8e8e8;
-    border-style: none;
-    border-bottom: 1px solid #2f2f2f;
     padding: 2px 10px 2px 10px;
     width: 300px;
     margin: 2px 0px 10px 0px;
+    background-color: #2e2e2e;
+    color: #e8e8e8;
+    border-style: none;
+    border-bottom: 1px solid #e8e8e8;
 }
 
 input:focus {
@@ -123,15 +132,16 @@ input:focus {
 
 textarea {
     text-align: center;
-    background-color: #e8e8e8;
-    border-style: none;
-    border-bottom: 1px solid #2f2f2f;
     padding: 2px 10px 2px 10px;
     width: 300px;
     margin: 2px 0px 10px 0px;
     max-height: 250px;
     height: 25px;
     resize: none;
+    background-color: #2e2e2e;
+    color: #e8e8e8;
+    border-style: none;
+    border-bottom: 1px solid #e8e8e8;
 }
 
 textarea:focus {
@@ -197,6 +207,7 @@ textarea:focus {
     font-weight: 500;
     display: block;
 }
+
 .unselected {
     color: #ffffff;
     font-weight: 100;
@@ -227,6 +238,7 @@ textarea:focus {
 #aboutText {
     font-size: 15px !important;
     margin: 0 20px;
+    color: #e8e8e8;
 }
 
 #aboutBack {
@@ -237,7 +249,7 @@ textarea:focus {
     width: 100%;
     height: auto;
     padding: 5px 0px 20px 0px;
-    background-color: #e8e8e8;
+    background-color: #6876a5;
 }
 
 #profileImage {
@@ -311,10 +323,10 @@ textarea:focus {
 
 .availableButton {
     color: white;
-    background-color: #0ac959;
+    background-color: #2f2f2f;
 }
 .availableButton:hover {
-    background-color: #2f2f2f;
+    background-color: #0ac959;
 }
 .projectLink {
     text-decoration: underline;
@@ -328,6 +340,7 @@ textarea:focus {
 
 #contact {
     height: 100vh;
+    min-height: 550px;
     background-color: #2e2e2e;
     display: flex;
     justify-content: center;
@@ -341,10 +354,10 @@ textarea:focus {
 }
 
 #contactBox {
-    background-color: #e8e8e8;
+    background-color: #2e2e2e;
     padding: 0px 0px 10px 0px;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 #centerContact {
@@ -363,6 +376,7 @@ textarea:focus {
     padding: 10% 0;
     font-size: 15px;
     text-align: center;
+    color: #e8e8e8;
 }
 
 #submitStatus {
@@ -424,6 +438,14 @@ textarea:focus {
         font-size: 80px;
     }
 
+    h3 {
+        color: #000000;
+    }
+
+    a {
+        padding: 0px 20px 0px 0px;
+    }
+
     p {
         font-size: 15px !important;
     }
@@ -463,11 +485,12 @@ textarea:focus {
     }
 
     #aboutFront {
-        width: 700px !important ;
-        height: 700px !important ;
+        width: 700px !important;
+        height: 700px !important;
         padding: 0;
         position: relative;
         transform: translate(80px, -20px);
+        background-color: #e8e8e8;
     }
 
     #aboutBack {
@@ -481,6 +504,7 @@ textarea:focus {
     }
 
     #aboutText {
+        color: #111111;
         font-size: 15px !important;
     }
 
@@ -500,8 +524,27 @@ textarea:focus {
     }
 
     #contactBox {
+        background-color: #e8e8e8;
         width: 750px !important;
         height: 600px !important;
+    }
+
+    #contactText {
+        color: #111111;
+    }
+
+    input[type="text"] {
+        background-color: #e8e8e8;
+        border-style: none;
+        border-bottom: 1px solid #2f2f2f;
+        color: #111111;
+    }
+
+    textarea {
+        background-color: #e8e8e8;
+        border-style: none;
+        border-bottom: 1px solid #2f2f2f;
+        color: #111111;
     }
 
     #submitStatus {

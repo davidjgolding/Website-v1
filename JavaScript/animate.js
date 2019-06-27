@@ -6,6 +6,11 @@ function aboutAnimation() {
         transform: "translate(-30px, 10px)"
     });
 }
+/* Determines if the user is viewing the desktop site */
+function desktopSite() {
+    // Uses element only visable on desktop site
+    return $("#aboutBack").is(":visible");
+}
 
 /* Check if element is visable */
 function isScrolledIntoView(elem) {
@@ -36,13 +41,27 @@ function findView() {
     }
 }
 
+function changeStatusPosition() {
+    if (!desktopSite()) {
+        if ($(window).scrollTop() + 40 > $("#contact").offset().top) {
+            $("#submitStatus").css("top", "40px");
+            $("#submitStatus").css("position", "fixed");
+        } else {
+            $("#submitStatus").css("top", "0px");
+            $("#submitStatus").css("position", "relative");
+        }
+    } else {
+        $("#submitStatus").css("top", "");
+        $("#submitStatus").css("position", "absolute");
+    }
+}
+
 /* Apply appropriate properties depending on current slide */
 function selection() {
     let tags = ["#navAbout", "#navExperience", "#navContact"];
     let current = findView();
-    console.log(current);
     // If the desktop site is displayed
-    if ($("#aboutBack").is(":visible")) {
+    if (desktopSite()) {
         // If about back is visable, play animation
         if (current == "#navAbout") {
             aboutAnimation();
@@ -55,6 +74,9 @@ function selection() {
             $("body").css("scroll-snap-type", "both mandatory");
             $("html").css("scroll-snap-type", "both mandatory");
         }
+    } else {
+        $("body").css("scroll-snap-type", "none");
+        $("html").css("scroll-snap-type", "none");
     }
     // Change the nav bar for current slide
     if (current != "none") {
@@ -80,13 +102,26 @@ function centerGrid() {
         $("#experience").css("padding", "0px");
     }
 }
+function githubLogo() {
+    if (desktopSite()) {
+        $("#githubDesktop").css("display", "inline");
+        $("#githubMobile").css("display", "none");
+    } else {
+        $("#githubMobile").css("display", "inline");
+        $("#githubDesktop").css("display", "none");
+    }
+}
 
 $(document).ready(function() {
     // Centers project grid
     $(window).resize(function() {
         centerGrid();
+        githubLogo();
+        selection();
+        changeStatusPosition();
     });
     centerGrid();
+    githubLogo();
     // Displays mobile menu when clicked
     $("#mobileMenu").bind("click", function() {
         $("#navLinks").animate({ width: "toggle" });
@@ -171,4 +206,5 @@ $(document).ready(function() {
 /* Updates the navigation bar on scroll */
 window.addEventListener("scroll", function(event) {
     selection();
+    changeStatusPosition();
 });
