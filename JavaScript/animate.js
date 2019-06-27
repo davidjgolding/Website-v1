@@ -6,20 +6,13 @@ function aboutAnimation() {
         transform: "translate(-30px, 10px)"
     });
 }
-/* Determines if the user is viewing the desktop site */
-function desktopSite() {
-    // Uses element only visable on desktop site
-    return $("#aboutBack").is(":visible");
-}
 
 /* Check if element is visable */
 function isScrolledIntoView(elem) {
     var docViewTop = $(window).scrollTop();
     var docViewBottom = docViewTop + $(window).height();
-
     var elemTop = $(elem).offset().top;
     var elemBottom = elemTop + $(elem).height();
-
     return (
         (elemBottom <= docViewBottom * 1.03 && elemTop * 1.2 >= docViewTop) ||
         (elemBottom >= docViewBottom && elemTop <= docViewTop)
@@ -41,8 +34,23 @@ function findView() {
     }
 }
 
-function changeStatusPosition() {
-    if (!desktopSite()) {
+/* Determines if the user is viewing the desktop site */
+function desktopSite() {
+    // Uses an element only visable on desktop site
+    return $("#aboutBack").is(":visible");
+}
+
+/* Adapts content depending whether if on mobile or desktop stie. */
+function adaptContent() {
+    if (desktopSite()) {
+        // Position form submission status banner at top of container div
+        $("#submitStatus").css("top", "");
+        $("#submitStatus").css("position", "absolute");
+        // Dark GitHub logo
+        $("#githubDesktop").css("display", "inline");
+        $("#githubMobile").css("display", "none");
+    } else {
+        // Position banner towards top of screen while in div, when above position at top of div
         if ($(window).scrollTop() + 40 > $("#contact").offset().top) {
             $("#submitStatus").css("top", "40px");
             $("#submitStatus").css("position", "fixed");
@@ -50,9 +58,9 @@ function changeStatusPosition() {
             $("#submitStatus").css("top", "0px");
             $("#submitStatus").css("position", "relative");
         }
-    } else {
-        $("#submitStatus").css("top", "");
-        $("#submitStatus").css("position", "absolute");
+        // Light GitHub logo
+        $("#githubMobile").css("display", "inline");
+        $("#githubDesktop").css("display", "none");
     }
 }
 
@@ -102,30 +110,21 @@ function centerGrid() {
         $("#experience").css("padding", "0px");
     }
 }
-function githubLogo() {
-    if (desktopSite()) {
-        $("#githubDesktop").css("display", "inline");
-        $("#githubMobile").css("display", "none");
-    } else {
-        $("#githubMobile").css("display", "inline");
-        $("#githubDesktop").css("display", "none");
-    }
-}
 
 $(document).ready(function() {
-    // Centers project grid
     $(window).resize(function() {
         centerGrid();
-        githubLogo();
         selection();
-        changeStatusPosition();
+        adaptContent();
     });
     centerGrid();
-    githubLogo();
+    adaptContent();
+
     // Displays mobile menu when clicked
     $("#mobileMenu").bind("click", function() {
         $("#navLinks").animate({ width: "toggle" });
     });
+
     // Form submission
     $("#contactForm").submit(function(e) {
         e.preventDefault();
@@ -206,5 +205,5 @@ $(document).ready(function() {
 /* Updates the navigation bar on scroll */
 window.addEventListener("scroll", function(event) {
     selection();
-    changeStatusPosition();
+    adaptContent();
 });
