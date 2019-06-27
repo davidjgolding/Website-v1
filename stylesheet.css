@@ -5,7 +5,7 @@
     Mobile menu: #2f2f2f
     About: #6876a5
     Experience: #636179
-    Contact: #f0dfa5
+    Contact: #2e2e2e
 */
 
 * {
@@ -328,7 +328,7 @@ textarea:focus {
 
 #contact {
     height: 100vh;
-    background-color: #2e2e2e /*#f0dfa5*/;
+    background-color: #2e2e2e;
     display: flex;
     justify-content: center;
     align-items: center;

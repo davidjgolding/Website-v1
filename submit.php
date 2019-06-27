@@ -1,4 +1,6 @@
 <?php
+    require 'vendor/autoload.php';
+
     // Given a string returns true if it is not in the format of an email
     function notAnEmail($str) {
         if (preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/", $str)) {
@@ -35,24 +37,21 @@
         echo " ";
     }
 
-    // If no error occured, compose and send message
+    // If no error occured, compose and send message via sendgrid
     if ($status == 0) {
-        // Composes HTML email
-        $tosend = '
-        <html>
-        <body>
-        ' . $message . '
-        </body>
-        </html>';
-
-        // MIME headers
-        $headers[] = 'MIME-Version: 1.0';
-        $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-        $headers[] = 'To: David Golding <david@davidgolding.co.uk>';
-        $headers[] = 'From: ' . $name . ' <' . $email . '>';
-        $headers[] = 'Reply-To: ' . $name . ' <' . $email . '>';
-        
-        mail("david@davidgolding.co.uk", "[DG Website] Form Submission",  $tosend, implode("\r\n", $headers));
+        $email = new \SendGrid\Mail\Mail(); 
+        $email->setFrom($email, $name);
+        $email->setSubject("[DG Website] Form Submission");
+        $email->addTo("david@davidgolding.co.uk", "David Golding");
+        $email->addContent("text/html", $message);
+        $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+        try {
+            $response = $sendgrid->send($email);
+            print $response->statusCode() . "\n";
+            print_r($response->headers());
+            print $response->body() . "\n";
+        } catch (Exception $e) {
+            echo 'Caught exception: '. $e->getMessage() ."\n";
+        }
     } 
-   
 ?>
