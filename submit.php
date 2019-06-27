@@ -42,9 +42,12 @@
         $email = new \SendGrid\Mail\Mail(); 
         $email->setFrom("site@davidgolding.co.uk", "DG Website");
         $email->setSubject("[DG Website] Form Submission by " . $name);
-        $email->addTo("david@davidgolding.co.uk", "David Golding")
-                -> setReplyTo($from) -> setFromName($name);
-        $email->addContent("text/html", $message);
+        $email->addTo("david@davidgolding.co.uk", "David Golding");
+        $email->setReplyTo($from);
+        $email->addContent("text/html", 
+        "<b>Name:</b><br> " . $name . " <br>
+        <b>Email:</b><br> " . $from . "<br> 
+        <b>Message:</b><br>" . $message);
         $sendgrid = new \SendGrid(trim(file_get_contents("../../key.txt")));
         try {
            $sendgrid->send($email);
