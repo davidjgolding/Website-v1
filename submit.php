@@ -40,9 +40,10 @@
     // If no error occured, compose and send message via sendgrid
     if ($status == 0) {
         $email = new \SendGrid\Mail\Mail(); 
-        $email->setFrom($from, $name);
-        $email->setSubject("[DG Website] Form Submission");
-        $email->addTo("david@davidgolding.co.uk", "David Golding");
+        $email->setFrom("site@davidgolding.co.uk", "DG Website");
+        $email->setSubject("[DG Website] Form Submission by " . $name);
+        $email->addTo("david@davidgolding.co.uk", "David Golding")
+                -> setReplyTo($from) -> setFromName($name);
         $email->addContent("text/html", $message);
         $sendgrid = new \SendGrid(trim(file_get_contents("../../key.txt")));
         try {
