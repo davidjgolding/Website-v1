@@ -19,7 +19,7 @@
     $status = 0;
 
     // Checks that none of the fields are empty
-    $submitted = array($name, $email, $message);
+    $submitted = array($name, $from, $message);
     for ($x = 0; $x < count($submitted); $x++) {
         if(empty($submitted[$x]) == true) {
             $status = 1;
@@ -30,7 +30,7 @@
     }
    
     // Checks that the email field is of the format of an email
-    if (notAnEmail($email)) {
+    if (notAnEmail($from)) {
         $status = 1;
         echo "4";
     } else {
