@@ -98,12 +98,20 @@ $(document).ready(function() {
             url: "submit.php",
             type: "POST",
             data: $(this).serialize(),
+            beforeSend: function() {
+                $("#submitStatus").text("Just processing your message...");
+                $("#submitStatus").removeClass("submitFailure");
+                $("#submitStatus").removeClass("submitSuccess");
+                $("#submitStatus").addClass("submitProcessing");
+                $("#submit").attr("disabled", true);
+            },
             success: function(state) {
                 // If no error recieved, show message sent
                 if (state == "    ") {
                     $("#submitStatus").text(
                         "Your message was successfully submitted."
                     );
+                    $("#submitStatus").removeClass("submitProcessing");
                     $("#submitStatus").removeClass("submitFailure");
                     $("#submitStatus").addClass("submitSuccess");
                     $("#formWithoutTitle").css("display", "none");
@@ -149,7 +157,9 @@ $(document).ready(function() {
                     if (errors.length == 1) {
                         errorMessage += " has been entered correctly.";
                     }
+                    $("#submit").attr("disabled", false);
                     $("#submitStatus").text(errorMessage);
+                    $("#submitStatus").removeClass("submitProcessing");
                     $("#submitStatus").removeClass("submitSuccess");
                     $("#submitStatus").addClass("submitFailure");
                 }
