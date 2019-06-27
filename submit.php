@@ -1,5 +1,5 @@
 <?php
-    require 'vendor/autoload.php';
+    require '../../vendor/autoload.php';
 
     // Given a string returns true if it is not in the format of an email
     function notAnEmail($str) {
@@ -12,7 +12,7 @@
 
     // Values retrived from the form submission
     $name = htmlspecialchars($_POST["name"]);
-    $email = htmlspecialchars($_POST["email"]);
+    $from = htmlspecialchars($_POST["email"]);
     $message = htmlspecialchars($_POST["message"]);
     
     // Value to indicate if error has occured
@@ -40,18 +40,15 @@
     // If no error occured, compose and send message via sendgrid
     if ($status == 0) {
         $email = new \SendGrid\Mail\Mail(); 
-        $email->setFrom($email, $name);
+        $email->setFrom($from, $name);
         $email->setSubject("[DG Website] Form Submission");
         $email->addTo("david@davidgolding.co.uk", "David Golding");
         $email->addContent("text/html", $message);
         $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
         try {
-            $response = $sendgrid->send($email);
-            print $response->statusCode() . "\n";
-            print_r($response->headers());
-            print $response->body() . "\n";
+           $sendgrid->send($email);
         } catch (Exception $e) {
-            echo 'Caught exception: '. $e->getMessage() ."\n";
+           exit;
         }
     } 
 ?>
