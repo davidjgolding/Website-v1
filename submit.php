@@ -44,7 +44,7 @@
         $email->setSubject("[DG Website] Form Submission");
         $email->addTo("david@davidgolding.co.uk", "David Golding");
         $email->addContent("text/html", $message);
-        $sendgrid = new \SendGrid(trim(file_get_contents("../key.txt")));
+        $sendgrid = new \SendGrid(trim(file_get_contents("../../key.txt")));
         try {
            $sendgrid->send($email);
         } catch (Exception $e) {
