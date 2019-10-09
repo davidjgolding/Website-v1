@@ -118,7 +118,7 @@
                 </div>
                 <!--Experience slide-->
                 <div id="experience" class="snapScroll">
-                    <div id="grid">
+                      <div id="grid">
                         <!--Individual project-->
                         <div class="project">
                             <!--Project shadow-->
@@ -126,18 +126,54 @@
                             <!--Project contents-->
                             <div class="projectFront">
                                 <!--Language img-->
+                                <div class="projectLogo">
+                                  <img
+                                      height=60px;
+
+                                      style="display: block; margin: auto;"
+                                      src="assets/chrome.svg"
+                                      alt="Chrome"
+                                  />
+                                </div>
+                                <!--Details-->
+                                <div class="projectSide">
+                                    <!--Date-->
+                                    <p class="projectDate">September 2019</p>
+                                    <!--Title-->
+                                    <p class="projectTitle">Scraper.</p>
+                                    <!--Link-->
+                                    <button
+                                        class="availableButton"
+                                        type="button"
+                                        onclick="window.location.href = 'https://github.com/davidjgolding/Scraper';"
+                                    >
+                                        GitHub
+                                    </button>
+                                </div>
+                                <!--Description-->
+                                <p class="projectDescription">
+                                  A Chrome extension which aided in gathering
+                                  data required for a job I had over the summer.
+                                  Essenially, it semi-intelligently scraped
+                                  profiles from LinkedIn Recruiter once the
+                                  extension was activiated and copied the results
+                                  to the clipboard. It was based in JavaScript
+                                  and introduced me to the complexity of dealing
+                                  with asynchronous events in a synchronous language.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <div class="projectShadow"></div>
+                            <div class="projectFront">
                                 <img
                                     class="projectLogo"
                                     src="assets/html.png"
                                     alt="HTML"
                                 />
-                                <!--Details-->
                                 <div class="projectSide">
-                                    <!--Date-->
                                     <p class="projectDate">June 2019</p>
-                                    <!--Title-->
                                     <p class="projectTitle">This Website.</p>
-                                    <!--Link-->
                                     <button
                                         class="availableButton"
                                         type="button"
@@ -146,7 +182,6 @@
                                         GitHub
                                     </button>
                                 </div>
-                                <!--Description-->
                                 <p class="projectDescription">
                                     A personal project to enhance my web
                                     development skills. The project provided me
@@ -284,36 +319,8 @@
                                     alt="Java"
                                 />
                                 <div class="projectSide">
-                                    <p class="projectDate">December 2018</p>
-                                    <p class="projectTitle">Maze 2.</p>
-                                    <button type="button">On Request</button>
-                                </div>
-                                <p class="projectDescription">
-                                    Coursework relating to the "Programming for
-                                    Computer Scientists" (<a
-                                        class="projectLink"
-                                        href="https://warwick.ac.uk/fac/sci/dcs/teaching/modules/cs118/"
-                                        >CS118</a
-                                    >) first-year module. This task developed
-                                    the functionality from Maze 1 so that the
-                                    robot navigated a given maze using a depth
-                                    first search. A stack was used to record the
-                                    robot's moves so that it was able to easily
-                                    retrace a successful path.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="project">
-                            <div class="projectShadow"></div>
-                            <div class="projectFront">
-                                <img
-                                    class="projectLogo"
-                                    src="assets/java.png"
-                                    alt="Java"
-                                />
-                                <div class="projectSide">
                                     <p class="projectDate">October 2018</p>
-                                    <p class="projectTitle">Maze 1.</p>
+                                    <p class="projectTitle">Maze.</p>
                                     <button type="button">On Request</button>
                                 </div>
                                 <p class="projectDescription">
@@ -323,11 +330,12 @@
                                         href="https://warwick.ac.uk/fac/sci/dcs/teaching/modules/cs118/"
                                         >CS118</a
                                     >) first-year module. The aim of the task
-                                    was to navigate a robot around a virutal
+                                    was to navigate a robot around a virtual
                                     maze without it crashing into walls and make
                                     moves which positioned it closer to the
-                                    target. A random move was chosen if multiple
-                                    moves made the robot closer to the target.
+                                    target. In the end, the robot used depth
+                                    first search to navigate and was also
+                                    able to retrace its steps.
                                 </p>
                             </div>
                         </div>
