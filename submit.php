@@ -1,5 +1,5 @@
 <?php
-    require './vendor/autoload.php';
+    require '../vendor/autoload.php';
 
     // Given a string returns true if it is not in the format of an email
     function notAnEmail($str) {
