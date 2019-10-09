@@ -1,5 +1,5 @@
 <?php
-    require '../../vendor/autoload.php';
+    require './vendor/autoload.php';
 
     // Given a string returns true if it is not in the format of an email
     function notAnEmail($str) {
@@ -14,7 +14,7 @@
     $name = htmlspecialchars($_POST["name"]);
     $from = htmlspecialchars($_POST["email"]);
     $message = htmlspecialchars($_POST["message"]);
-    
+
     // Value to indicate if error has occured
     $status = 0;
 
@@ -28,7 +28,7 @@
             echo " ";
         }
     }
-   
+
     // Checks that the email field is of the format of an email
     if (notAnEmail($from)) {
         $status = 1;
@@ -39,20 +39,20 @@
 
     // If no error occured, compose and send message via sendgrid
     if ($status == 0) {
-        $email = new \SendGrid\Mail\Mail(); 
-        $email->setFrom("site@davidgolding.co.uk", "DG Website");
+        $email = new \SendGrid\Mail\Mail();
+        $email->setFrom("site@davidgolding.uk", "DG Website");
         $email->setSubject("[DG Website] Form Submission by " . $name);
-        $email->addTo("david@davidgolding.co.uk", "David Golding");
+        $email->addTo("contact@davidgolding.uk", "David Golding");
         $email->setReplyTo($from);
-        $email->addContent("text/html", 
+        $email->addContent("text/html",
         "<b>Name:</b><br> " . $name . " <br>
-        <b>Email:</b><br> " . $from . "<br> 
+        <b>Email:</b><br> " . $from . "<br>
         <b>Message:</b><br>" . $message);
-        $sendgrid = new \SendGrid(trim(file_get_contents("../../key.txt")));
+        $sendgrid = new \SendGrid(trim(file_get_contents("../key.txt")));
         try {
            $sendgrid->send($email);
         } catch (Exception $e) {
            exit;
         }
-    } 
+    }
 ?>
