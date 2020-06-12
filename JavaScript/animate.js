@@ -69,7 +69,7 @@ function selection() {
     let tags = ["#navAbout", "#navExperience", "#navContact"];
     let current = findView();
     // If the desktop site is displayed
-    if (desktopSite()) {
+    /* if (desktopSite()) {
         // If about back is visable, play animation
         if (current == "#navAbout") {
             aboutAnimation();
@@ -85,7 +85,7 @@ function selection() {
     } else {
         $("body").css("scroll-snap-type", "none");
         $("html").css("scroll-snap-type", "none");
-    }
+    } */
     // Change the nav bar for current slide
     if (current != "none") {
         for (i in tags) {
